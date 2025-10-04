@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #0066cc;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.score-item {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.score-label {
+    font-weight: bold;
+    color: #0066cc;
+}
+
+#score, #water-collected, #water-deposited {
+    color: #006400;
+    font-weight: bold;
+}
+
+#game-canvas {
+    width: 800px;
+    height: 600px;
+    background: linear-gradient(to bottom, #87CEEB 0%, #98D8E8 100%);
+    border: 4px solid #0066cc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.player {
+    width: 40px;
+    height: 50px;
+    background: #8B4513;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 5px;
+    transition: left 0.05s linear;
+}
+
+.player::before {
+    content: '🪣';
+    font-size: 30px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.player::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #FFB6C1;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.water-droplet {
+    width: 20px;
+    height: 25px;
+    background: #1E90FF;
+    position: absolute;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: fall linear;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(600px);
+    }
+}
+
+.rain-cloud {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: #708090;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.rain-cloud::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background: #708090;
+    border-radius: 50%;
+    top: -15px;
+    left: 10px;
+}
+
+.rain-cloud::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    background: #708090;
+    border-radius: 50%;
+    top: -10px;
+    right: 10px;
+}
+
+.deposit {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    bottom: 20px;
+    background: rgba(139, 69, 19, 0.8);
+    border: 3px solid #654321;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+}
+
+#deposit-left {
+    left: 20px;
+}
+
+#deposit-right {
+    right: 20px;
+}
+
+.deposit-label {
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.deposit-fill {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to bottom, #1E90FF 0%, #0066cc 100%);
+    transition: height 0.3s ease;
+    border-radius: 0 0 3px 3px;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.instructions p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.instructions strong {
+    color: #0066cc;
+}
+
+.player.carrying::before {
+    content: '🪣💧';
+}

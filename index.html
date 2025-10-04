@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydro Hero - Charity Water Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Hydro Hero</h1>
+            <div class="score-container">
+                <div class="score-item">
+                    <span class="score-label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Water Collected:</span>
+                    <span id="water-collected">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Water Deposited:</span>
+                    <span id="water-deposited">0</span>
+                </div>
+            </div>
+        </div>
+        <div id="game-canvas">
+            <div id="deposit-left" class="deposit">
+                <div class="deposit-label">Deposit</div>
+                <div class="deposit-fill"></div>
+            </div>
+            <div id="deposit-right" class="deposit">
+                <div class="deposit-label">Deposit</div>
+                <div class="deposit-fill"></div>
+            </div>
+        </div>
+        <div class="instructions">
+            <p>Use <strong>← →</strong> arrow keys to move</p>
+            <p>Press <strong>SPACE</strong> to deposit water at left or right ends</p>
+            <p>Catch water droplets falling from rain clouds!</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
