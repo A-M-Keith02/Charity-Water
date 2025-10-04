@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydro Hero - Charity Water Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hydro Hero</h1>
+            <p class="subtitle">Defend Clean Water!</p>
+        </header>
+        
+        <div class="game-info">
+            <div class="info-item">
+                <span class="label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Lives:</span>
+                <span id="lives">3</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Level:</span>
+                <span id="level">1</span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="gameOver" class="overlay" style="display: none;">
+            <div class="message-box">
+                <h2>Game Over</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <button id="restartBtn">Play Again</button>
+            </div>
+        </div>
+        
+        <div id="victory" class="overlay" style="display: none;">
+            <div class="message-box">
+                <h2>Victory!</h2>
+                <p>You've protected clean water!</p>
+                <p>Final Score: <span id="victoryScore">0</span></p>
+                <button id="nextLevelBtn">Next Level</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <p><strong>Controls:</strong> Arrow Keys to move, Spacebar to shoot</p>
+        </div>
+        
+        <footer>
+            <p>Supporting <a href="https://www.charitywater.org/" target="_blank">charity: water</a></p>
+        </footer>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
